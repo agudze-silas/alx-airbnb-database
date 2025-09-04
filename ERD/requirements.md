@@ -1,1 +1,1 @@
-![ERD Diagram](./images/airbnb_er.drawio.png)
+![ERD Diagram](airbnb_er.jpg)
