@@ -23,7 +23,9 @@ SELECT
 FROM Property p
 LEFT JOIN Review r 
     ON p.property_id = r.property_id;
-
+ORDER BY 
+    p.name ASC,
+    r.created_at DESC;
 
 SELECT 
     u.user_id,
