@@ -58,11 +58,9 @@ SELECT
     b.booking_id,
     b.start_date,
     b.end_date,
-    b.status,
     u.first_name || ' ' || u.last_name AS user_full_name,
     u.email,
     p.name AS property_name,
-    p.location,
     pay.amount,
     pay.payment_method
 FROM Booking b
@@ -71,4 +69,7 @@ JOIN User u
 JOIN Property p 
     ON b.property_id = p.property_id
 LEFT JOIN Payment pay 
-    ON b.booking_id = pay.booking_id;
+    ON b.booking_id = pay.booking_id
+WHERE b.status = 'confirmed'
+  AND u.email = 'guest1@example.com'
+  AND p.location = 'Accra';
